@@ -11,6 +11,10 @@
       <a href='/'>Home</a>
       {{#if isLoggedIn}}
         <button class='btn btn-logout'>Log Out</button>
+        <button class='btn btn-create'>Create Post</button>
+        <a href='profile.handlebars'>
+          <button class='btn btn-profile'>My Profile</button>
+        </a>
       {{else}}
         <a href='/login'>login</a>
         <a href='/signup'>signup</a>
