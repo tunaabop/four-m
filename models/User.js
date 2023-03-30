@@ -12,7 +12,7 @@ class User extends Model {
 
 User.init(
   {
-    id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -26,6 +26,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    
   },
   {
     hooks: {
