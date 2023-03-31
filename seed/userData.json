@@ -1,13 +1,16 @@
 [
   {
+    "user_id": "123",
     "username": "harry",
     "password": "password123"
   },
   {
+    "user_id":"123",
     "username": "hermione",
     "password": "password123"
   },
   {
+    "user_id":"123",
     "username": "hagrid",
     "password": "password123"
   }
