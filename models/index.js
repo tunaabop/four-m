@@ -1,4 +1,8 @@
-const User = require('./User');
+const User = require('./models/User');
+const Post = require('./models/Post');
+const Follower = require('./models/Follower');
+const PostBoard = require('./models/PostBoard');
+const Board = require('./models/Board');
 
 // Define sequelize associations in this file.
 // Posts belongsTo a User
@@ -15,28 +19,42 @@ Post.belongsToMany(Board, {
     as: 'post_in_board',
     foreignKey: 'post_id'
 });
-// Tags belongToMany Products (through PostBoard)
+// Boards belongToMany Posts (through PostBoard)
 Board.belongsToMany(Post, {
     through: PostBoard,
     as: 'post_in_board',
     foreignKey: 'post_id'
 });
-// Follower belongToMany User (through FF)
+
+// Define Follower/Following relationships
+const User_Follower = sequelize.define('User_Follower', {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false
+    },
+    selfGranted: DataTypes.BOOLEAN
+  }, { timestamps: false });
+
+// Follower belongToMany User (through User_Follower)
 User.belongsToMany(Follower, {
-    through: FF,
+    through: User_Follower,
     as: 'follower_id',
     foreignKey: 'user_id'
 });
-// User belongToMany Followers (through FF)
-User.belongsToMany(Following, {
-    through: FF,
-    as: 'following_id',
+// User belongToMany Followers (through User_Follower)
+Follower.belongsToMany(User, {
+    through: User_Follower,
+    as: 'follower_id',
     foreignKey: 'user_id'
 });
+
 module.exports = { 
     User,
     Post,
-    Followers,
-    Following,
+    Board,
+    Follower,
+    User_Follower,
     PostBoard,
 };
