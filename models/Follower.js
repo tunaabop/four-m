@@ -9,15 +9,15 @@ Follower.init(
     follower_id: {
       type: DataTypes.INTEGER,
       references: {
-        model:'follower',
-        key:'id'
+        model:'user',
+        key:'user_id'
       }
     },
-    following_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       reference: {
-        model:'following',
-        key:'id'
+        model:'user',
+        key:'user_id'
       }
     }
   },
@@ -30,4 +30,4 @@ Follower.init(
   }
 );
 
-module.exports = Follwer;
+module.exports = Follower;
