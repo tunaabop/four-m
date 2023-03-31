@@ -1,10 +1,21 @@
 <div class="user-profile">
-  <div class="user-avatar">
-    <img src="{{avatar}}" alt="{{name}}'s avatar">
-  </div>
-  <div class="user-info">
-    <h1>{{name}}</h1>
-    <!--user info would include number of posts, followers, and following-->
-    <p>{{user-info}}</p>
-  </div>
-</div>
+        <!--Header of the page with title centered and user avatar and menu option to the right-->
+        <section class="hero is-small" style="background-color: black">
+          <div class="hero-body">
+            <h3 class="title is-1 has-text-centered" style="color:lime;">Four'm</h3>
+            <div class="user-avatar">
+              <img src="{{avatar}}" alt="{{name}}'s avatar">
+            </div>
+        </section>
+        <section class="user-info has-text-centered has-background-dark" >
+            <div class="user-avatar">
+                <!--adds in the user avatar with their information-->
+                <img src="{{avatar}}" alt="{{name}}'s avatar">
+                <h1 style="color:lime;">{{name}}</h1>
+                <!--user info would include number of posts, followers, and following-->
+                <p style="color:lime;">{{user-info}}</p>
+            </div>
+         </section>
+          </div>
+        </div>
+    <footer class="footer has-background-dark"> </footer>
