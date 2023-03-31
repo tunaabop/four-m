@@ -30,4 +30,4 @@ Follower.init(
   }
 );
 
-module.exports = Follwer;
+module.exports = Follower;
