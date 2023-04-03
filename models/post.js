@@ -7,13 +7,13 @@ class Post extends Model {}
 
 Post.init(
   {
-    Post_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    Image_path: {
+    image_path: {
       type: DataTypes.STRING,
       allowNull: false,
     },

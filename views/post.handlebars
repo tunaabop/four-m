@@ -1,11 +1,18 @@
 <div class='post'>
     <div class="image">
-        <img src='{{post.img_path}}'' alt='{{user.username}}'s post'>
+        <img src="{{post.image_path}}" alt="{{user.username}}'s post">
     </div>
     <div class="caption">
         <p>{{post.caption}}</p>
     </div>
-    <div class="save-button">
-        <button>Save</button>
-    </div>
+    {{!-- TODO: add div to display post creation date --}}
+
+
+
+
+    {{!-- comment: deleted div, should not have save button here, this is a view post handlebar 
+    not create new post --}}
+    {{!-- <div class="save-button">
+        <button type="submit">Save</button>
+    </div> --}}
 </div>

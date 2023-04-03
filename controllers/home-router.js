@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../models');
+
+const { User, Post } = require('../models');
 
 // use withAuth middleware to redirect from protected routes.
 // const withAuth = require("../util/withAuth");
@@ -36,5 +37,6 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup', { title: 'Sign-Up Page' });
 });
+
 
 module.exports = router;

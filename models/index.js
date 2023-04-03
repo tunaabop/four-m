@@ -59,8 +59,5 @@ User.belongsToMany(User, { as: 'following', foreignKey: 'follower_id', through: 
 module.exports = { 
     User,
     Post,
-    // Board,
-    // Follower,
     User_Follower,
-    // PostBoard,
 };
