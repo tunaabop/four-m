@@ -10,14 +10,11 @@
     <nav>
       <a href='/'>Home</a>
       {{#if isLoggedIn}}
-        <button class='button btn-logout'>Log Out</button>
+        <a href="/profile">My profile</a> |
         <button class='button btn-create'>Create Post</button>
-        <a href='/profile'>
-          <button class='button btn-profile'>My Profile</button>
-        </a>
-      {{else}}
-        <a href='/login'>login</a>
-        {{!-- <a href='/signup'>signup</a> --}}
+        <button class="no-button" id="logout">Logout</button>
+        {{else}}
+        <a href="/login">login</a>
       {{/if}}
     </nav>
     {{{body}}}
