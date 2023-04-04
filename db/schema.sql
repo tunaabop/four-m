@@ -1,2 +1,3 @@
--- drop database if exists DB_NAME;
+drop database if exists fourm_db;
 create database fourm_db;
+
