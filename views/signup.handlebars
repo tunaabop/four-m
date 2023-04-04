@@ -1,12 +1,25 @@
-<h1>Signup</h1>
-<form class='signup-form'>
-  <label for='username'>Username</label><br />
-  <input type='text' name='username' id='username-signup' /><br />
-  <label for='password'>Password</label><br />
-  <input type='password' name='password' id='password-signup' /><br />
-  <label for='confirm-password'>Confirm Password</label><br />
-  <input type='password' name='confirm-password' id='confirm-password' /><br />
-  <button class='btn' type='submit'>Submit</button>
-</form>
-<p>Already haveuse an account? <a href='/login'>Login Here</a></p>
-<script src='./js/signup.js'></script>
+<div class=‘user-signup’ style=“background-color:black”>
+    <h1 style=‘text-align:center’>Sign up</h1>
+  <form class=‘signup-form’>
+    <div class=‘field’>
+      <p>
+        <input type=‘text’ name=‘username’ id=‘username’ placeholder=“Username”/><br />
+      </p>
+    </div>
+    <div class=‘field’>
+      <p>
+        <input type=‘password’ name=‘password’ id=‘password’ placeholder=“Password” /><br />
+      </p>
+    </div>
+    <div class=‘field’>
+      <p>
+        <input type=‘password’ name=‘confirm-password’ id=‘confirm-password’ placeholder=“Confirm Password” /><br />
+      </p>
+    </div>
+    <button class=‘button is-medium is-responsive is-success is-focused’ type=‘submit’>
+      Submit
+    </button>
+  </form>
+  <p>Already have an account? <a href=‘/login’>Login Here</a></p>
+  <script src=‘/js/signup.js’></script>
+</div>
