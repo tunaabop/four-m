@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const withAuth = require('../util/withAuth');
+const withAuth  = require('../util/withAuth');
 const { User, Post } = require('../models');
 
 // use withAuth middleware to redirect from protected routes.
@@ -12,27 +12,58 @@ const { User, Post } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    let user;
-    if (req.session.isLoggedIn) {
-      user = await User.findByPk(req.session.userId, {
-        exclude: ['password'],
-        raw: true,
-      });
-    }
-    res.render('home', {
-      title: 'Home Page',
-      isLoggedIn: req.session.isLoggedIn,
-      user,
+    // Get all projects and JOIN with user data
+    const postData = await Post.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
     });
-  } catch (error) {
-    console.error(error);
-    res.status(500).send('⛔ Uh oh! An unexpected error occurred.');
+
+    // Serialize data so the template can read it
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('home', { 
+      posts, 
+      isLoggedIn: req.session.isLoggedIn 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+});
+router.get('/post/:id', async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    res.render('post', {
+      ...post,
+      isLoggedIn: req.session.isLoggedIn
+    });
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
 // login route render
 router.get('/login', (req, res) => {
-  res.render('login', { title: 'Log-In Page' });
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
+  res.render('login');
 });
 
 // signup route render
@@ -41,10 +72,25 @@ router.get('/signup', (req, res) => {
 });
 
 // profile route render
-router.get('/profile', (req, res) => {
-  res.render('profile', { title: 'Profile Page' });
-});
+router.get('/profile', async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Post }],
+    });
 
+    const user = userData.get({ plain: true });
+
+    res.render('profile', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+});
 
 router.post('/upload', withAuth, async (req, res) => {
   try {
