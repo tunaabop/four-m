@@ -1,37 +1,32 @@
 const { Model, DataTypes } = require('sequelize');
-const bcrypt = require('bcrypt');
+
 const sequelize = require('../config/connection');
-const { format } = require('prettier');
 
 class Follower extends Model {}
 
 Follower.init(
   {
-    Follower_id: {
+    follower_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    Image_path: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      image_path:varchar(255).NOTNULL,
-
-    },
-    caption: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    creation_date: {
-        date: Date,
+      references: {
+        model:'user',
+        key:'user_id'
+      }
     },
     user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+      reference: {
+        model:'user',
+        key:'user_id'
+      }
+    }
+  },
+  {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'follower',
   }
 );
 

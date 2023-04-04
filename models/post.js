@@ -5,7 +5,6 @@ const { format } = require('prettier');
 
 class Post extends Model {}
 
-//define col
 Post.init(
   {
     post_id: {
@@ -17,7 +16,6 @@ Post.init(
     image_path: {
       type: DataTypes.STRING,
       allowNull: false,
-
     },
     caption: {
       type: DataTypes.STRING,
@@ -31,10 +29,15 @@ Post.init(
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+      // primaryKey: true,
+      // autoIncrement: true,
     },
+  },
+  {
+    sequelize,
+    modelName: 'post'
   }
+  
 );
 
 module.exports = Post;
