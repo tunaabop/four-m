@@ -1,10 +1,6 @@
 const loginFormHandler = async (event) => {
   event.preventDefault();
-<<<<<<< HEAD
-  console.log("logged in")
-=======
   console.log("login button clicked")
->>>>>>> d2dd6b3269af717e41774f92f07f06dde72db380
   // Collect values from the login form
   const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
@@ -51,10 +47,6 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
-<<<<<<< HEAD
-
-=======
 // document
 //   .querySelector('.signup-form')
 //   .addEventListener('submit', signupFormHandler);
->>>>>>> d2dd6b3269af717e41774f92f07f06dde72db380
