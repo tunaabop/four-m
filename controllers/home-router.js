@@ -74,13 +74,11 @@ router.get('/signup', (req, res) => {
 // profile route render
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    console.log('tryign')
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }],
     });
-    console.log(userData);
     const user = userData.get({ plain: true });
 
     res.render('profile', {

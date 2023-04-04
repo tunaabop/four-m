@@ -13,7 +13,7 @@ if (event.target.hasAttribute('data-id')) {
 }
 };
 document
-.querySelector('.post-list')
+.querySelector('.btn-profile')
 .addEventListener('click', delButtonHandler);
 
   

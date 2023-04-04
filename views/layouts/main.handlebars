@@ -8,13 +8,13 @@
   </head>
   <body class="has-text-primary-dark">
     <nav>
-      <a class = "button is-normal is responsive"href='/'>Home</a>
+      <a class = "button is-primary is-light is-normal is responsive"href='/'>Home</a>
       {{#if isLoggedIn}}
-        <a class="button is-normal is responsive " href="/profile">My profile</a> |
-        <button class='button btn-create'>Create Post</button>
-        <button class="button is-normal is responsive" id="btn-logout">Logout</button>
+        <a class="button is-primary is-light is-normal is responsive btn-profile " href="/profile">My profile</a> |
+        <button class='button is-primary is-light btn-create'>Create Post</button>
+        <button class="button is-primary is-light is-normal is responsive" id="btn-logout">Logout</button>
         {{else}}
-        <a class="button is-normal is responsive" href="/login">login</a>
+        <a class="button is-primary is-light is-normal is responsive" href="/login">login</a>
       {{/if}}
     </nav>
     {{{body}}}

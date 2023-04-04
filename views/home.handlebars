@@ -8,10 +8,11 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
         <link rel="stylesheet" href="./public/css/style.css" />
     </head>
-{{#if isLoggedIn}}
   <section class="hero is-large has-background-dark">
-    <h1 class="has-text-centered is-size-2 mb-6">Welcome to Four'm, {{user.username}}!</h1>
+    <h1 class="has-text-centered is-$primary is-size-2 mb-6 ">Welcome to Four'm!</h1>
   </section>
+{{#if isLoggedIn}}
+  
   {{!-- form to create new post here once user logs in --}}
   <div class="col-md-6 has-text-centered is-size-4" style="background-color: rgb(54, 50, 50)">
     {{!-- future implementation: add a create-post button --}}
