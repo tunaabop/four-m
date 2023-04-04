@@ -12,12 +12,13 @@
       {{#if isLoggedIn}}
         <a class="button is-normal is responsive " href="/profile">My profile</a> |
         <button class='button btn-create'>Create Post</button>
-        <button class="button is-normal is responsive" id="logout">Logout</button>
+        <button class="button is-normal is responsive" id="btn-logout">Logout</button>
         {{else}}
         <a href="/login">login</a>
       {{/if}}
     </nav>
     {{{body}}}
     <script src='/js/main.js'></script>
+    <script src='/js/logout.js'></script>
   </body>
 </html>
