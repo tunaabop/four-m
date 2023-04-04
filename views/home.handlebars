@@ -1,7 +1,5 @@
-
-<h1>Home</h1>
 {{#if isLoggedIn}}
-  <h2>Welcome to Four'm, {{user.username}}!</h2>
+  <h1>Welcome to Four'm, {{user.username}}!</h1>
   {{!-- form to create new post here once user logs in --}}
    <div class="col-md-6">
     {{!-- future implementation: add a create-post button --}}
@@ -27,3 +25,20 @@
   <br />
   <a class='btn' href='/signup'>Sign Up</a>
 {{/unless}}
+
+{{!-- display explore page --}}
+{{#each posts as |post| }}
+<div class="row mb-4 post">
+  <div class="col-md-5">
+    <h2>
+      {{!-- render image TODO: implement get_image helper function --}}
+      {{{get_image}}}
+      <a href="/post/{{post.id}}">{{post.caption}}</a>
+    </h2>
+    <p>
+      {{post.caption}}
+    </p>
+    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+  </div>
+</div>
+{{/each}}
