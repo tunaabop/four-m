@@ -6,23 +6,21 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/css/style.css' />
   </head>
-  <body>
+  <body class="has-text-primary-dark">
     <nav>
       <a href='/'>Home</a>
       {{#if isLoggedIn}}
-        <button class='btn btn-logout'>Log Out</button>
-        <button class='btn btn-create'>Create Post</button>
-        <a href='profile.handlebars'>
-          <button class='btn btn-profile'>My Profile</button>
+        <button class='button btn-logout'>Log Out</button>
+        <button class='button btn-create'>Create Post</button>
+        <a href='/profile'>
+          <button class='button btn-profile'>My Profile</button>
         </a>
       {{else}}
         <a href='/login'>login</a>
-        <a href='/signup'>signup</a>
+        {{!-- <a href='/signup'>signup</a> --}}
       {{/if}}
     </nav>
     {{{body}}}
-    <a href='post.handlebars'</a>
-    {{!-- display posts --}}
     <script src='/js/main.js'></script>
   </body>
 </html>

@@ -1,3 +1,26 @@
+<<<<<<< HEAD
 [{
     
 }]
+=======
+[
+  {
+    "post_id": "1",
+    "image_path": "sample_post_1",
+    "caption": "none",
+    "user_id" : 1
+  },
+   {
+    "post_id": "2",
+    "image_path": "sample_post_2",
+    "caption": "none",
+    "user_id" : 1
+  },
+   {
+    "post_id": "3",
+    "image_path": "sample_post_3",
+    "caption": "none",
+    "user_id" : 2
+  }
+]
+>>>>>>> c1365ebcac449715783e508dfaf86c950a41a0f9
