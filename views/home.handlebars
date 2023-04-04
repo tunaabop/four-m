@@ -1,8 +1,44 @@
-<h1>Home</h1>
 {{#if isLoggedIn}}
-  <h2>Welcome to Four'm, {{user.username}}!</h2>
+  <h1>Welcome to Four'm, {{user.username}}!</h1>
+  {{!-- form to create new post here once user logs in --}}
+   <div class="col-md-6">
+    {{!-- future implementation: add a create-post button --}}
+    <h3>Create a New Post:</h3> 
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="form new-project-form">
+      <div class="form-group">
+        {{!-- upload image file --}}
+        <label for="post-image">Post image here:</label>
+        <input class="form-input" type="file" id="post-image" name="image_path" />
+        <button type="submit">Upload</button>
+      </div>
+      <div class="form-group">
+        <label for="post-caption">Caption:</label>
+        <textarea class="form-input" id="post-caption" name="caption"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
 {{/if}}
 {{#unless isLoggedIn}}
   <br />
   <a class='btn' href='/signup'>Sign Up</a>
 {{/unless}}
+
+{{!-- display explore page --}}
+{{#each posts as |post| }}
+<div class="row mb-4 post">
+  <div class="col-md-5">
+    <h2>
+      {{!-- render image TODO: implement get_image helper function --}}
+      {{{get_image}}}
+      <a href="/post/{{post.id}}">{{post.caption}}</a>
+    </h2>
+    <p>
+      {{post.caption}}
+    </p>
+    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+  </div>
+</div>
+{{/each}}

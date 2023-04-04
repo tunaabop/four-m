@@ -1,6 +1,7 @@
 require('dotenv').config();
 const exphbs = require('express-handlebars');
 const express = require('express');
+const fileUpload = require('express-fileupload');
 const path = require('path');
 const sequelize = require('./config/connection');
 const router = require('./controllers');
@@ -12,6 +13,13 @@ const app = express();
 
 // setup app middleware
 app.use(sessionMiddleware);
+  // use the express-fileupload middleware for post img upload
+  app.use(fileUpload({
+    limits: {
+        fileSize: 10000000, // limit img size to around 10MB
+    },
+    abortOnLimit: true,
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', exphbs({ helpers }));
 app.set('view engine', 'handlebars');
@@ -30,7 +38,7 @@ sequelize
         console.error(err);
         return process.exit(1);
       }
-      console.log(`App listening on PORT ${PORT}`);
+      console.log(`Four'm App listening on PORT ${PORT}`);
     });
   })
   .catch((err) => {

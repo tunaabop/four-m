@@ -6,13 +6,13 @@
     <title>{{title}}</title>
     <link rel='stylesheet' href='/css/style.css' />
   </head>
-  <body>
+  <body class="has-text-primary-dark">
     <nav>
       <a href='/'>Home</a>
       {{#if isLoggedIn}}
         <button class='btn btn-logout'>Log Out</button>
         <button class='btn btn-create'>Create Post</button>
-        <a href='profile.handlebars'>
+        <a href='/profile'>
           <button class='btn btn-profile'>My Profile</button>
         </a>
       {{else}}
