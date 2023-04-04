@@ -1,35 +1,53 @@
-// Validate user input and send login request
-const handleLoginSubmit = async (event) => {
+const loginFormHandler = async (event) => {
   event.preventDefault();
-  try {
-    const username = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
 
-    if (!username || !password) {
-      alert('You must provide a username and password.');
-      return;
-    }
+  // Collect values from the login form
+  const username = document.querySelector('#email-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
+  if (email && password) {
+    // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
-      headers: {
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
+      body: JSON.stringify({ email, password }),
+      headers: { 'Content-Type': 'application/json' },
     });
 
-    if (!response.ok) {
-      alert('Failed to sign up.');
-      return;
+    if (response.ok) {
+      // If successful, redirect the browser to the profile page
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
     }
+  }
+};
 
-    // go to home page
-    window.location.replace('/');
-  } catch (error) {
-    console.log(error);
+const signupFormHandler = async (event) => {
+  event.preventDefault();
+
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+
+  if (name && email && password) {
+    const response = await fetch('/api/users', {
+      method: 'POST',
+      body: JSON.stringify({ name, email, password }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert(response.statusText);
+    }
   }
 };
 
 document
-  .querySelector('.login-btn')
-  .addEventListener('submit', handleLoginSubmit);
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);
