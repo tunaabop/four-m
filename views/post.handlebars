@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  {{!-- comment: deleted div, this file is a view post handlebar; 
     user can create new post in home.handlebars --}}
 <div class='post'>
@@ -9,3 +10,48 @@
     </div>
     {{!-- TODO: add div to display post creation date --}}
 </div>
+=======
+<div class="file">
+    <label class="file-label">
+        <input class="file-input" type="file" name="resume">
+        <span class="file-cta">
+            <span class="file-icon">
+                <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">
+                Choose a file…
+            </span>
+        </span>
+    </label>
+</div>
+
+<div>
+    <textarea class="caption" placeholder="Include a caption..." rows="5"></textarea>
+</div>
+
+<div class="save-button">
+    <button>Save</button>
+</div>
+
+
+ {{!-- form to create new post here once user logs in 
+    {{!-- <div class="col-md-6">
+    {{!-- future implementation: add a create-post button --}}
+    <h3>Create a New Post:</h3> 
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="form new-project-form">
+      <div class="form-group">
+        {{!-- upload image file --}}
+        <label for="post-image">Post image here:</label>
+        <input class="form-input" type="file" id="post-image" name="image_path" />
+        <button type="submit">Upload</button>
+      </div>
+      <div class="form-group">
+        <label for="post-caption">Caption:</label>
+        <textarea class="form-input" id="post-caption" name="caption"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div> --}}
+>>>>>>> a47deb4b94e732dcd36864aa7f5ef4a5acdf6879

@@ -1,10 +1,37 @@
 <h1>Login</h1>
-<form class='login-form'>
-  <label for='username'>Username</label><br />
-  <input type='text' name='username' id='username' /><br />
+{{!-- <div class='login-form'>
+  <label class='username' type='username'>Username</label><br />
+  <input class='username' type='username' placeholder='Username' /><br />
   <label for='password'>Password</label><br />
-  <input type='password' name='password' id='password' /><br />
-  <button class='btn' type='submit'>Submit</button>
-</form>
+  <input class='password' type='password' placeholder='Password' /><br />
+  <button class='login-btn' type='submit'>Login</button>
+</div>
+<p>Don't have an account yet? <a href='/signup'>Sign Up Here</a></p> --}}
+<div class="field">
+  <p class="control has-icons-left has-icons-right">
+    <input class="input" type="email" placeholder="Email">
+    <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+    </span>
+    <span class="icon is-small is-right">
+      <i class="fas fa-check"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control has-icons-left">
+    <input class="input" type="password" placeholder="Password">
+    <span class="icon is-small is-left">
+      <i class="fas fa-lock"></i>
+    </span>
+  </p>
+</div>
+<div class="field">
+  <p class="control">
+    <button class="button is-success">
+      Login
+    </button>
+  </p>
+</div>
 <p>Don't have an account yet? <a href='/signup'>Sign Up Here</a></p>
 <script src='/js/login.js'></script>
