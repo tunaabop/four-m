@@ -46,8 +46,10 @@ User.hasMany(Post, {
 //     as: 'followed_user',
 //     // foreignKey: 'user_id'
 // });
+
 User.belongsToMany(User, { as: 'follower', foreignKey: 'user_id', through: User_Follower });
 User.belongsToMany(User, { as: 'following', foreignKey: 'follower_id', through: User_Follower });
+
 // User belongToMany Followers (through User_Follower)
 // Follower.belongsToMany(User, {
 //     through: User_Follower,

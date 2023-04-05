@@ -7,8 +7,8 @@ router.post("/", async (req, res) => {
   try {
     const user = await User.create({ username, password });
     req.session.isLoggedIn = true;
-    req.session.userId = user.id;
-    req.session.save(() => res.json({ id: user.id }));
+    req.session.user_id = user.user_id;
+    req.session.save(() => res.json({ id: user.user_id }));
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Internal server error." });
@@ -28,8 +28,8 @@ router.post("/login", async (req, res) => {
       throw new Error("Invalid password");
     }
     req.session.isLoggedIn = true;
-    req.session.userId = user.id;
-    req.session.save(() => res.json({ id: user.id }));
+    req.session.user_id = user.user_id;
+    req.session.save(() => res.json({ id: user.user_id }));
   } catch (error) {
     console.error(error);
     res.status(400).json({ message: "Invalid username or password." });

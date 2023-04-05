@@ -21,6 +21,8 @@ app.use(sessionMiddleware);
     abortOnLimit: true,
 }));
 app.use(express.static(path.join(__dirname, 'public')));
+// TODO: implement to fetch image - not working rn
+// app.use('/upload', express.static('upload'));
 app.engine('handlebars', exphbs({ helpers }));
 app.set('view engine', 'handlebars');
 app.use(express.json());
