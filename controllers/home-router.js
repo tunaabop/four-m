@@ -116,7 +116,8 @@ router.post('/upload', withAuth, async (req, res) => {
       });
       // console.log(req.body);
   // Successfully Post
-      res.status(200).json(newPost);
+      // res.status(200).json(newPost);
+      res.redirect('/');
     } catch (err) {
       res.status(400).json({"some error":err});
     } 
