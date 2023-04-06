@@ -1,8 +1,9 @@
-const { User, Follower } = require("../../models");
+const { User, } = require("../../models");
 const User_Follower = require("../../models/User_Follower");
 const router = require("express").Router();
 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   const { username, password } = req.body;
   try {
     const user = await User.create({ username, password });

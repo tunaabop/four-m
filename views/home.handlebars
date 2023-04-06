@@ -41,10 +41,9 @@
 {{!-- display #explore posts here --}}
 <h2>Explore</h2>
 {{#each posts as |post| }}
-<div class="row mb-4 post" style="background-color: rgb(54, 50, 50)">
+{{!-- <div class="row mb-4 post" style="background-color: rgb(54, 50, 50)">
   <div class="col-md-5">
     <h2>
-      {{!-- render image TODO: implement get_image helper function --}}
       {{post.caption}}
       
     </h2>
@@ -54,7 +53,35 @@
       <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p> 
       <button class="button is-primary is-light is-small is responsive" id="btn-follow">Follow</button>
     </div>
-    
+
+  </div>
+</div> --}}
+<div class="card">
+  <div class="card-image">
+    <figure class="image is-48x48">
+      {{!-- <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image"> --}}
+      <a href="/post/{{post.post_id}}">{{{get_image post.image_path}}}</a>
+    </figure>
+  </div>
+  <div class="card-content">
+    <div class="media">
+      {{!-- <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div> --}}
+      <div class="media-content">
+        <p class="title is-4">@{{post.user.username}}</p>
+        {{!-- <p class="subtitle is-6">@johnsmith</p> --}}
+      </div>
+    </div>
+
+    <div class="content">
+      {{post.caption}}<a>@{{post.user.username}}</a>
+      {{!-- <a href="#">#css</a> <a href="#">#responsive</a> --}}
+      <br>
+      <time datetime="{{format_date post.date_created}}">{{format_date post.date_created}}</time>
+    </div>
   </div>
 </div>
 {{/each}}
