@@ -2,18 +2,18 @@
 const delButtonHandler = async (event) => {
 if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-    const response = await fetch(`/api/posts/${id}`, {
-    method: 'DELETE',
+    const response = await fetch(`/api/post/${id}`, {
+        method: 'DELETE',
     });
     if (response.ok) {
-    document.location.replace('/profile');
+        document.location.replace('/profile');
     } else {
     alert('Failed to remove post');
     }
 }
 };
 document
-.querySelector('.btn-profile')
+.querySelector('.btn-danger')
 .addEventListener('click', delButtonHandler);
 
   

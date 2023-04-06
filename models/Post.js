@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 // const bcrypt = require('bcryptjs');
 const sequelize = require('../config/connection');
-const { format } = require('prettier');
+// const { format } = require('prettier');
 
 class Post extends Model {}
 

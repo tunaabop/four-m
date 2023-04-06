@@ -12,7 +12,7 @@ const { User, Post } = require('../models');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all projects and JOIN with user data
+    // Get all posts and JOIN with user data
     const postData = await Post.findAll({
       include: [
         {
@@ -24,14 +24,17 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
-
     // Pass serialized data and session flag into template
+    let name = '';
+    let user;
     if (req.session.isLoggedIn) {
-      
+      user = await User.findOne({ where: { user_id: req.session.user_id } });
+      name = user.username;
     }
     res.render('home', { 
       posts, 
-      isLoggedIn: req.session.isLoggedIn 
+      isLoggedIn: req.session.isLoggedIn,
+      name: name
     });
   } catch (err) {
     res.status(500).json(err);
@@ -40,6 +43,7 @@ router.get('/', async (req, res) => {
 });
 router.get('/post/:id', async (req, res) => {
   try {
+    console.log("try to render post")
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
@@ -48,12 +52,12 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
-
     const post = postData.get({ plain: true });
-
+    // const postData = await Post.findOne({ where: { post_id: req.params.id } });
+    // const post = postData.get({ plain: true });
+    console.log(post.date_created)
     res.render('post', {
       ...post,
-      isLoggedIn: req.session.isLoggedIn
     });
   } catch (err) {
     res.status(500).json(err);
