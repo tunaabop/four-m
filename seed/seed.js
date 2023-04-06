@@ -1,9 +1,10 @@
 require('dotenv').config();
 const sequelize = require('../config/connection');
-const { User, User_Follower } = require('../models');
+const { User, User_Follower, Post } = require('../models');
 
 const userData = require('./userData.json');
 const followerData = require('./followerData.json');
+const postData = require('./postData.json');
 
 
 const seedDatabase = async () => {
@@ -14,6 +15,10 @@ const seedDatabase = async () => {
       returning: true,
     });
     await User_Follower.bulkCreate(followerData, {
+      individualHooks: true,
+      returning: true,
+    });
+    await Post.bulkCreate(postData, {
       individualHooks: true,
       returning: true,
     });

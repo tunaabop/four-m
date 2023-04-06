@@ -1,20 +1,26 @@
 [
   {
     "post_id": "1",
-    "image_path": "sample_post_1",
-    "caption": "none",
+    "image_path": "sample_post_1.jpeg",
+    "caption": "CSS Basic Cheatsheet",
     "user_id" : 1
   },
    {
     "post_id": "2",
-    "image_path": "sample_post_2",
-    "caption": "none",
+    "image_path": "sample_post_2.jpeg",
+    "caption": "Checkout these best websites for coding!",
     "user_id" : 1
   },
    {
     "post_id": "3",
-    "image_path": "sample_post_3",
-    "caption": "none",
+    "image_path": "sample_post_3.jpeg",
+    "caption": "Coding languages used by different companies",
+    "user_id" : 2
+  },
+  {
+    "post_id": "4",
+    "image_path": "sample_post_4.jpeg",
+    "caption": "some software dev tools I found!",
     "user_id" : 2
   }
 ]
