@@ -3,6 +3,8 @@
 * {
     font-family: 'VT323', monospace; 
     color: #05ffda;
+
+
 }
 :root {
     --card_width: 250px;
@@ -31,4 +33,5 @@
     margin: 15px 5px;
     border-radius: var(--card_border_radius);
     background-color: white;
+
 }
