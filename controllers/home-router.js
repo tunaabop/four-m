@@ -71,7 +71,7 @@ router.get('/login', (req, res) => {
 
 // signup route render
 router.get('/signup', (req, res) => {
-  res.render('signup', { title: 'Sign-Up Page' });
+  res.render('signup', { title: 'Sign-Up Page', style:"signup.css"});
 });
 
 // profile route render
