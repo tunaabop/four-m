@@ -1,18 +1,18 @@
 <div class="row has-background-dark">
   <div class="col-auto has-background-dark">
-    <h1 class="is-$primary is-size-2 ml-6 ">{{name}}'s Board</h1>
+    <h1 class="is-$primary is-size-2 ml-6 "><span></span>{{name}}'s Board</h1>
   </div>
 
 
 {{!-- <div class="row mt-4 has-background-dark"> --}}
 
 <div>
-  <h3> 0 Followers • 0 Following</h3>
+  <h3 class="ml-6"> 0 Followers • 0 Following</h3>
 </div>
 
   {{#if posts.length}}
   {{!-- <div class="col-md-6 post-list has-background-dark"> --}}
-    <h3>My Board:</h3>
+    {{!-- <h3>My Board:</h3> --}}
 <div class='pin_container has-background-dark' >
     {{#each posts as |post|}}
     <div class="card has-background-light">
@@ -42,7 +42,7 @@
       </a>
     </div>
     <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{post.post_id}}">DELETE</button>
+        <button class="button is-danger btn btn-sm btn-danger" data-id="{{post.post_id}}">DELETE</button>
     </div>
 
   </div>
