@@ -43,6 +43,7 @@ router.get('/', async (req, res) => {
 });
 router.get('/post/:id', async (req, res) => {
   try {
+    console.log("try to render post")
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
@@ -51,12 +52,12 @@ router.get('/post/:id', async (req, res) => {
         },
       ],
     });
-
     const post = postData.get({ plain: true });
-
+    // const postData = await Post.findOne({ where: { post_id: req.params.id } });
+    // const post = postData.get({ plain: true });
+    console.log(post.date_created)
     res.render('post', {
       ...post,
-      isLoggedIn: req.session.isLoggedIn
     });
   } catch (err) {
     res.status(500).json(err);

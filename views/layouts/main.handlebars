@@ -16,6 +16,10 @@
         {{else}}
         <a class="button is-primary is-light is-normal is responsive" href="/login">login</a>
       {{/if}}
+      {{#unless isLoggedIn}}
+
+        <a class='button is-primary is-light is-normal is responsive' href='/signup'>Sign Up</a>
+      {{/unless}}
     </nav>
     {{{body}}}
     <script src='/js/main.js'></script>
