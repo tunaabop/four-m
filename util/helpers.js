@@ -4,9 +4,9 @@ module.exports = {
     return date.toLocaleDateString();
   },
   get_image: (image_path) => {
-    const img_src = "../controllers/upload/" +image_path;
+    const img_src = "/upload/" +image_path;
     return `<img id="post-image"
     src="${img_src}"
-    alt="Best Websites for Coding">`;
+    alt="This is an image for a post">`;
   },
 };

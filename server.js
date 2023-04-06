@@ -22,7 +22,7 @@ app.use(sessionMiddleware);
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 // TODO: how to fetch image? - not working
-// app.use('/upload', express.static('upload'));
+app.use('/upload', express.static(path.join(__dirname, 'controllers/upload')));
 app.engine('handlebars', exphbs({ helpers }));
 app.set('view engine', 'handlebars');
 app.use(express.json());
