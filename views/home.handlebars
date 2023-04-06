@@ -48,9 +48,13 @@
       {{post.caption}}
       
     </h2>
-    <a href="/post/{{post.post_id}}">{{{get_image post.image_path}}}</a>
+    <a href="/post/{{post.post_id}}" style="display:block; width:50%; margin:auto">{{{get_image post.image_path}}}</a>
     
-    <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p>
+    <div class="post-text" style="text-align:center">
+      <p>Created by {{post.user.username}} on {{format_date post.date_created}}</p> 
+      <button class="button is-primary is-light is-small is responsive" id="btn-follow">Follow</button>
+    </div>
+    
   </div>
 </div>
 {{/each}}
