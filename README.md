@@ -1,5 +1,5 @@
 # four-m
-four'm (pronounced 'forum') is a picture-board design tech forum, an interactive full-stack app for fellow engineers and tech enthusiasts to connect, share ideas and newest technology and essentially create their own profile board from inspirations.
+[four'm](https://four-m.herokuapp.com/) (pronounced 'forum') is a picture-board design tech forum, an interactive full-stack app for fellow engineers and tech enthusiasts to connect, share ideas and newest technology and essentially create their own profile board from inspirations.
 
 ## Our Team
 
@@ -18,8 +18,10 @@ AS A new developer, I want a app where I can see and save posts, as well as crea
 SO THAT I can increase my knowledge of new tech advances in software and hardware.
 SO THAT I can collaberate, gain experiences, and build a social network with other developers.
 
-## Wireframe
+## Demo Video of Heroku App
+[Watch Demo Here](https://drive.google.com/file/d/1R6BjnEpBp6hZJla7o0SIZXilEklKoIss/view)
 
+## App Screenshots
 ![Image showing 1 out of 4 screenshots](./wireframes/screenshot_1.png)
 ![Image showing 2 out of 4 screenshots](./wireframes/screenshot_2.png)
 ![Image showing 3 out of 4 screenshots](./wireframes/screenshot_3.png)
@@ -54,7 +56,7 @@ SO THAT I can collaberate, gain experiences, and build a social network with oth
 
 ## How To Use
 
-To clone and run this application, you'll need VS installed on your computer. From your command line:
+To clone and run this application locally, you'll need VS code installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
@@ -63,6 +65,19 @@ $ git clone git@github.com:tunaabop/four-m.git
 $ cd four-m
 # Install dependencies
 $ npm install
+# Source database
+$ mysql -u root -p
+$ source [insert db path here]
+# Run seeds
+$ node seed/seed.js
 # Run the app
 $ npm start
 ```
+
+## Sources Used for this Project
+
+
+* [How to Upload Image through filesystems with Node.js and Express](https://pqina.nl/blog/upload-image-with-nodejs/ )
+* [How to Fetch Image File from Node.js Server](https://www.geeksforgeeks.org/how-to-fetch-images-from-node-js-server/# )
+* [How to create a card using Bulma CSS](https://bulma.io/documentation/components/card/ )
+
