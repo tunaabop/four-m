@@ -19,7 +19,11 @@ SO THAT I can increase my knowledge of new tech advances in software and hardwar
 SO THAT I can collaberate, gain experiences, and build a social network with other developers.
 
 ## Wireframe
-insert images here
+
+![Image showing 1 out of 3 wireframe](./wireframes/screenshot_1.png)
+![Image showing 2 out of 3 wireframe](./wireframes/screenshot_2.png)
+![Image showing 3 out of 3 wireframe](./wireframes/screenshot_3.png)
+
 ## Key Features
 ### Main Page
 -   When user visits the main page, they are taken to the #Explore page with all added ideas
