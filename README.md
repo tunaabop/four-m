@@ -18,7 +18,7 @@ AS A new developer, I want a app where I can see and save posts, as well as crea
 SO THAT I can increase my knowledge of new tech advances in software and hardware.
 SO THAT I can collaberate, gain experiences, and build a social network with other developers.
 
-## Demo Video of Heroku App
+## Demo Video of [Heroku App](https://four-m.herokuapp.com/)
 [Watch Demo Here](https://drive.google.com/file/d/1R6BjnEpBp6hZJla7o0SIZXilEklKoIss/view)
 
 ## App Screenshots
