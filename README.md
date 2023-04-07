@@ -20,9 +20,10 @@ SO THAT I can collaberate, gain experiences, and build a social network with oth
 
 ## Wireframe
 
-![Image showing 1 out of 3 wireframe](./wireframes/screenshot_1.png)
-![Image showing 2 out of 3 wireframe](./wireframes/screenshot_2.png)
-![Image showing 3 out of 3 wireframe](./wireframes/screenshot_3.png)
+![Image showing 1 out of 4 screenshots](./wireframes/screenshot_1.png)
+![Image showing 2 out of 4 screenshots](./wireframes/screenshot_2.png)
+![Image showing 3 out of 4 screenshots](./wireframes/screenshot_3.png)
+![Image showing 4 out of 4 screenshots](./wireframes/screenshot_4.png)
 
 ## Key Features
 ### Main Page
